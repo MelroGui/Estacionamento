@@ -1,0 +1,11 @@
+@import url("/global/styles.css");
+
+#cli:hover {
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: rgb(0, 174, 255);
+}
+
+#vaga {
+    background-color: rgb(0, 174, 255);
+}
