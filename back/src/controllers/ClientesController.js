@@ -31,7 +31,7 @@ function listaCliente(req, res) {
 };
 
 function cadastrarCliente(req, res) {
-    let query = `INSERT INTO Clientes VALUES (DEFAULT, '${req.body.nome}')`;
+    let query = `INSERT INTO Clientes VALUES ('${req.body.cpf}', '${req.body.nome}')`;
 
     connect.query(query, (err, result) => {
         if(err == null) {

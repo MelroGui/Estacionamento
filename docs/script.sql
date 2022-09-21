@@ -4,19 +4,19 @@ CREATE DATABASE Estacionamento charset=UTF8 collate utf8_general_ci;
 USE Estacionamento;
 
 CREATE TABLE Clientes (
-    cpf INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(50) NOT NULL,
+    cpf varchar(15) NOT NULL PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE Telefones (
-    cpf integer not null,
+    cpf varchar(15) not null,
 	telefone varchar(15) not null,
 	foreign key (cpf) references Clientes(cpf) on delete cascade
 );
 
 CREATE TABLE Veiculos (
-    placa INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    cpf integer not null,
+    placa INTEGER NOT NULL PRIMARY KEY,
+    cpf varchar(15) not null,
 	cor varchar(15) not null,
 	modelo varchar(15) not null,
 	foreign key (cpf) references Clientes(cpf) on delete cascade

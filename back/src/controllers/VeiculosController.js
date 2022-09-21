@@ -19,7 +19,7 @@ function listarVeiculos(req, res) {
 };
 
 function listaVeiculo(req, res) {
-    let query = `SELECT * FROM Veiculos WHERE cpf = '${req.params.placa}'`;
+    let query = `SELECT * FROM Veiculos WHERE placa = '${req.params.placa}'`;
     
     connect.query(query, (err, result) => {
         if(err == null) {
@@ -31,7 +31,7 @@ function listaVeiculo(req, res) {
 };
 
 function cadastrarVeiculo(req, res) {
-    let query = `INSERT INTO Veiculos VALUES (DEFAULT, '${req.body.cor}', '${req.body.modelo}')`;
+    let query = `INSERT INTO Veiculos VALUES ('${req.body.placa}', '${req.body.cor}', '${req.body.modelo}')`;
 
     connect.query(query, (err, result) => {
         if(err == null) {
