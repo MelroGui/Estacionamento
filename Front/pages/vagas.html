@@ -12,41 +12,82 @@
 <body>
     <nav>
         <ul>
-            <li><a href="home.html"><button id="cli">Histórico</button></a></li>
-            <li><a href="vagas.html"><button id="vaga">Vagas</button></a></li>
+            <li><a href="home.html"><button id="his" class="button">Histórico</button></a></li>
+            <li><a href="vagas.html"><button id="vag" class="button">Vagas</button></a></li>
+            <li><button class="button" id="add" onclick="showModalOp()">Adicionar</button></li>
+            <li><button id="filtrar" id="filtro" class="button" onclick="showModalFil()">Filtrar</button></li>
         </ul>
     </nav>
     <main>
+
+        <div class="modalOp model modal">
+            <h2>Selecione uma Opção</h2>
+            <button class="buttonMod" onclick="showModalHis()">Adicionar um Histórico</button>
+            <button class="buttonMod" onclick="showModalVaga()">Adicionar uma Vaga</button>
+            <button class="cancelar" onclick="closeModalOp()">X</button>
+        </div>
+
+        <div class="modalVaga model modal">
+            <h2>Adicionar uma vaga</h2>
+            <button class="cancelar" onclick="closeModalVaga()">X</button>
+        </div>
+
+        <div class="modalHis model modal">
+            <h2>Adicionar uma Entrada</h2>
+            <button class="cancelar" onclick="closeModalHis()">X</button>
+        </div>
+
+        <div class="modalFil model modal">
+            <h2>Selecione um Filtro</h2>
+            <button class="buttonMod">Filtrar por Numeração</button>
+            <button class="buttonMod">Filtrar por Disponibilidade</button>
+            <button class="cancelar" onclick="closeModalFil()">X</button>
+        </div>
         <table>
             <h1>Vagas Disponíveis</h1>
             <table>
                 <thead>
                     <tr>
-                        <th>Coluna</th>
                         <th>Numeração</th>
                         <th>Disponibilidade</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>A</td>
                         <td>23</td>
                         <td>Disponível</td>
+                        <td><a href="" style="color: red;">Preencher</a></td>
                     </tr>
                     <tr>
-                        <td>A</td>
                         <td>12</td>
                         <td>Disponível</td>
+                        <td><a href="" style="color: red;">Preencher</a></td>
                     </tr>
                     <tr>
-                        <td>B</td>
-                        <td>6</td>
+                        <td>30</td>
                         <td>Disponível</td>
+                        <td><a href="" style="color: red;">Preencher</a></td>
                     </tr>
-                    
+                    <tr>
+                        <td>2</td>
+                        <td>Disponível</td>
+                        <td><a href="" style="color: red;">Preencher</a></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Disponível</td>
+                        <td><a href="" style="color: red;">Preencher</a></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Disponível</td>
+                        <td><a href="" style="color: red;">Preencher</a></td>
+                    </tr>
+
                 </tbody>
             </table>
     </main>
 </body>
+<script src="../scripts/index.js"></script>
 
 </html>

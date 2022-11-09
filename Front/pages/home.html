@@ -12,12 +12,44 @@
 <body>
     <nav>
         <ul>
-            <li><a href="home.html"><button id="cli">Histórico</button></a></li>
-            <li><a href="vagas.html"><button id="vaga">Vagas</button></a></li>
+            <li><a href="home.html"><button id="his" class="button">Histórico</button></a></li>
+            <li><a href="vagas.html"><button id="vag" class="button">Vagas</button></a></li>
+            <li><button class="button" id="add" onclick="showModalOp()">Adicionar</button></li>
+            <li><button id="filtrar" id="filtro" class="button" onclick="showModalFil()">Filtrar</button></li>
         </ul>
     </nav>
     <main>
+
+        <div class="modalOp model modal">
+            <h2>Selecione uma Opção</h2>
+            <button class="buttonMod" onclick="showModalHis()">Adicionar um Histórico</button>
+            <button class="buttonMod" onclick="showModalVaga()">Adicionar uma Vaga</button>
+            <button class="cancelar" onclick="closeModalOp()">X</button>
+        </div>
+
+        <div class="modalVaga model modal">
+            <h2>Adicionar uma vaga</h2>
+            <p>Quantidade: <input id="qtd" type="number"></p>
+            <button class="buttonMod">Finalizar</button>
+            <button class="cancelar" onclick="closeModalVaga()">X</button>
+        </div>
+
+        <div class="modalHis model modal">
+            <h2>Adicionar uma Entrada</h2>
+
+            <button class="cancelar" onclick="closeModalHis()">X</button>
+        </div>
+
+        <div class="modalFil model modal">
+            <h2>Selecione um Filtro</h2>
+            <button class="buttonMod">Filtro por Data</button>
+            <button class="buttonMod">Filtro por CPF</button>
+            <button class="buttonMod">Filtro por Placa</button>
+            <button class="cancelar" onclick="closeModalFil()">X</button>
+        </div>
+
         <h1>Histórico de Entradas</h1>
+
         <table>
             <thead>
                 <tr>
@@ -25,66 +57,87 @@
                     <th>Modelo</th>
                     <th>Cor</th>
                     <th>Placa</th>
+                    <th>Data</th>
+                    <th>Número da Vaga</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>523.909.872-09</td>
-                    <td>BRONCO</td>
+                    <td>523.909.872.09</td>
+                    <td>Ford</td>
                     <td>Cinza</td>
-                    <td>EPE-8989</td>
+                    <td>RYV-6535</td>
+                    <td>27/04/2022</td>
+                    <td>33</td>
                 </tr>
                 <tr>
-                    <td>435.523.560-29</td>
-                    <td>GOL</td>
+                    <td>523.909.872.09</td>
+                    <td>Chevrolet Onix</td>
+                    <td>Preto</td>
+                    <td>EEE-8579</td>
+                    <td>25/02/2022</td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <td>523.909.872.09</td>
+                    <td>Hyundai HB20</td>
                     <td>Branco</td>
-                    <td>CUI-3095</td>
+                    <td>MNF-0672</td>
+                    <td>08/11/2022</td>
+                    <td>8</td>
                 </tr>
                 <tr>
-                    <td>289.867.635-75</td>
-                    <td>SAVEIRO</td>
+                    <td>523.909.872.09</td>
+                    <td>Volkswagen Gol</td>
+                    <td>Cinza</td>
+                    <td>ODG-3747</td>
+                    <td>06/11/2022</td>
+                    <td>22</td>
+                </tr>
+                <tr>
+                    <td>523.909.872.09</td>
+                    <td>Fiat Mobi</td>
+                    <td>Branco</td>
+                    <td>BMY-1750</td>
+                    <td>03/09/2022</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>523.909.872.09</td>
+                    <td>Chevrolet Onix Plus</td>
                     <td>Preto</td>
-                    <td>LLB-1631</td>
+                    <td>CGW-5576</td>
+                    <td>06/05/2022</td>
+                    <td>1</td>
                 </tr>
                 <tr>
-                    <td>291.518.573-59</td>
-                    <td>TERRITORY</td>
-                    <td>Preto</td>
-                    <td>PVJ-9361</td>
-                </tr>
-                <tr>
-                    <td>211.849.711-37</td>
-                    <td>MOBI</td>
+                    <td>523.909.872.09</td>
+                    <td>Volkswagen Up</td>
                     <td>Vermelho</td>
-                    <td>EHX-2813</td>
+                    <td>QQF-7427</td>
+                    <td>08/09/2022</td>
+                    <td>4</td>
                 </tr>
                 <tr>
-                    <td>259.808.918-97</td>
-                    <td>GOL</td>
-                    <td>Azul</td>
-                    <td>HKO-4732</td>
+                    <td>523.909.872.09</td>
+                    <td>Renault Kwid</td>
+                    <td>Vermelho</td>
+                    <td>BAR-0840</td>
+                    <td>15/11/2022</td>
+                    <td>11</td>
                 </tr>
                 <tr>
-                    <td>889.262.242-01</td>
-                    <td>MAVERICK</td>
-                    <td>Cinza</td>
-                    <td>MIR-8052</td>
-                </tr>
-                <tr>
-                    <td>232.887.578-50</td>
-                    <td>T-CROSS</td>
-                    <td>Azul</td>
-                    <td>CKY-4168</td>
-                </tr>
-                <tr>
-                    <td>638.728.684-03</td>
-                    <td>GOL</td>
-                    <td>Cinza</td>
-                    <td>BBV-6422</td>
+                    <td>523.909.872.09</td>
+                    <td>Peugeot 208</td>
+                    <td>Branco</td>
+                    <td>DJX-0854</td>
+                    <td>04/09/2022</td>
+                    <td>18</td>
                 </tr>
             </tbody>
         </table>
     </main>
 </body>
+<script src="../scripts/index.js"></script>
 
 </html>

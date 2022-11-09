@@ -4,37 +4,53 @@ CREATE DATABASE Estacionamento charset=UTF8 collate utf8_general_ci;
 USE Estacionamento;
 
 CREATE TABLE Clientes (
-    cpf varchar(15) NOT NULL PRIMARY KEY,
-    nome VARCHAR(50) NOT NULL
-);
-
-CREATE TABLE Telefones (
-    cpf varchar(15) not null,
-	telefone varchar(15) not null,
-	foreign key (cpf) references Clientes(cpf) on delete cascade
+    id_Cli INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+	telefone VARCHAR(15) NOT NULL
 );
 
 CREATE TABLE Veiculos (
-    placa INTEGER NOT NULL PRIMARY KEY,
-    cpf varchar(15) not null,
+	placa varchar(15) NOT NULL PRIMARY KEY,
+	id_Cli integer not null,
 	cor varchar(15) not null,
 	modelo varchar(15) not null,
-	foreign key (cpf) references Clientes(cpf) on delete cascade
+	descricao varchar(50) not null,
+	FOREIGN KEY (id_Cli) REFERENCES Clientes(id_Cli) on delete cascade
 );
 
 CREATE TABLE Vagas (
     id_vaga INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	preco_hora decimal(5,2) not null,
-	disponibilidade varchar(1) not null
+	disponibilidade BIT not null
 );
 
+insert into Clientes values
+(default,"Jose Pedro","(19) 97109-1267"),
+(default,"Ana Pereira","(19) 97109-1267"),
+(default,"Maria da Silva","(19) 97109-1267"),
+(default,"Joao Antonio","(19) 97109-1267");
+insert into Veiculos values
+(1,"QYR-5413","preto","fox","what a foxey"),
+(2,"QSJ-2475","vermelho","bravo","perigoso"),
+(3,"DUF-7219","azul","fiesta","curtição q so"),
+(4,"JMO-8492","verde","siena","de ação");
+insert into Vagas values
+(default,5.00,1),
+(default,5.00,0),
+(default,5.00,0),
+(default,5.00,0),
+(default,5.00,0),
+(default,5.00,1),
+(default,5.00,0),
+(default,5.00,1),
+(default,5.00,0),
+(default,5.00,1);
+
 describe Clientes;
-describe Telefones;
 describe Veiculos;
 describe Vagas;
 show tables;
 
 select * from Clientes;
-select * from Telefones;
 select * from Veiculos;
 select * from Vagas;

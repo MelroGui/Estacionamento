@@ -1,0 +1,6 @@
+listar placa
+horario de saida e entrada
+json com id, nome, placa, modelo do carro e cor.
+qntd de vezes estacionado
+filtro por data
+entrada por hora

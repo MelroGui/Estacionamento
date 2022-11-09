@@ -1,3 +1,4 @@
+
 const mysql = require('mysql');
 
 const connect = mysql.createConnection({
@@ -19,7 +20,7 @@ function listarVagas(req, res) {
 };
 
 function listaVaga(req, res) {
-    let query = `SELECT * FROM Vagas WHERE cpf = '${req.params.id_vaga}'`;
+    let query = `SELECT * FROM Vagas WHERE id_vaga = '${req.params.id_vaga}'`;
     
     connect.query(query, (err, result) => {
         if(err == null) {
@@ -28,7 +29,7 @@ function listaVaga(req, res) {
             res.status(400).json(err).end();
         }
     })
-};
+}
 
 module.exports = {
     listarVagas,
