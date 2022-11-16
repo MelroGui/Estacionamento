@@ -40,9 +40,9 @@ function listarCliid(req, res) {
 };
 
 function cadastrarCliente(req, res) {
-    let query = `INSERT INTO Clientes VALUES ('${req.body.cpf}', '${req.body.nome}', '${req.body.telefone}')`;
+    let query = `INSERT INTO Clientes VALUES (default, '${req.body.nome}', '${req.body.telefone}')`;
 
-    connect.query(query, (err, result) => {
+    connect.query(query, (err, _result) => {
         if (err == null) {
             res.status(201).json(req.body).end();
         } else {

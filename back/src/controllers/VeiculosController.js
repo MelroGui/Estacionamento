@@ -32,7 +32,7 @@ function listaVeiculo(req, res) {
 };
 
 function cadastrarVeiculo(req, res) {
-    let query = `INSERT INTO Veiculos VALUES ('${req.body.id_Cli}', '${req.body.placa}', '${req.body.cor}', '${req.body.modelo}', '${req.body.descricao}')`;
+    let query = `INSERT INTO Veiculos VALUES ('${req.body.placa}', '${req.body.id_Cli}','${req.body.cor}', '${req.body.modelo}', '${req.body.descricao}')`;
 
     connect.query(query, (err, result) => {
         if (err == null) {

@@ -30,10 +30,10 @@ insert into Clientes values
 (default,"Maria da Silva","(19) 97109-1267"),
 (default,"Joao Antonio","(19) 97109-1267");
 insert into Veiculos values
-(1,"QYR-5413","preto","fox","what a foxey"),
-(2,"QSJ-2475","vermelho","bravo","perigoso"),
-(3,"DUF-7219","azul","fiesta","curtição q so"),
-(4,"JMO-8492","verde","siena","de ação");
+("QYR-5413", 1, "preto","fox","what a foxey"),
+("QSJ-2475", 2, "vermelho","bravo","perigoso"),
+("DUF-7219", 3, "azul","fiesta","curtição q so"),
+("JMO-8492", 4, "verde","siena","de ação");
 insert into Vagas values
 (default,5.00,1),
 (default,5.00,0),
